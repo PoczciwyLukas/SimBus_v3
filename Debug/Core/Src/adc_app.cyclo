@@ -1,0 +1,4 @@
+../Core/Src/adc_app.c:22:6:ADCAPP_Init	4
+../Core/Src/adc_app.c:44:24:u16_abs_diff	2
+../Core/Src/adc_app.c:49:6:ADCAPP_Process	4
+../Core/Src/adc_app.c:69:6:ADCAPP_EmitSnapshot	3

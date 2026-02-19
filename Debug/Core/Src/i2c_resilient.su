@@ -1,0 +1,6 @@
+../Core/Src/i2c_resilient.c:16:13:delay_short	16	static,ignoring_inline_asm
+../Core/Src/i2c_resilient.c:22:6:I2C1_BusRecover	32	static
+../Core/Src/i2c_resilient.c:64:26:mem_write	48	static
+../Core/Src/i2c_resilient.c:70:26:mem_read	48	static
+../Core/Src/i2c_resilient.c:76:19:I2C1_MemWrite8_Retry	48	static
+../Core/Src/i2c_resilient.c:86:19:I2C1_MemRead8_Retry	48	static

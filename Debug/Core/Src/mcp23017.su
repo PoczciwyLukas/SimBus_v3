@@ -1,0 +1,10 @@
+../Core/Src/mcp23017.c:41:26:mcp_write_u8	32	static
+../Core/Src/mcp23017.c:48:26:mcp_read_gpio16	32	static
+../Core/Src/mcp23017.c:62:13:mcp_config_inputs_pullups	16	static
+../Core/Src/mcp23017.c:71:24:mcp_apply_invert	16	static
+../Core/Src/mcp23017.c:77:6:MCP_Init	16	static
+../Core/Src/mcp23017.c:100:6:MCP_Poll	40	static
+../Core/Src/mcp23017.c:144:6:MCP_EmitSnapshot	24	static
+../Core/Src/mcp23017.c:161:10:MCP_GetStableState	8	static
+../Core/Src/mcp23017.c:162:10:MCP_GetRawState	8	static
+../Core/Src/mcp23017.c:163:10:MCP_GetI2CErrCount	8	static

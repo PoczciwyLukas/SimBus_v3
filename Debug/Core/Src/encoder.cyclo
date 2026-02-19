@@ -1,0 +1,6 @@
+../Core/Src/encoder.c:47:23:read_ab	3
+../Core/Src/encoder.c:54:23:apply_accel	3
+../Core/Src/encoder.c:70:13:emit_step	1
+../Core/Src/encoder.c:82:13:handle_encoder	6
+../Core/Src/encoder.c:114:6:Encoder_Init	2
+../Core/Src/encoder.c:149:6:Encoder_OnExti	19
