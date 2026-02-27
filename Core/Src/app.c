@@ -13,6 +13,17 @@
 #include "board_conf.h"
 #include "stm32g0xx_hal_iwdg.h"
 
+#if defined(__has_include)
+#  if __has_include("stm32g0xx_hal_iwdg.h")
+#    include "stm32g0xx_hal_iwdg.h"
+#    define APP_HAS_HAL_IWDG 1
+#  else
+#    define APP_HAS_HAL_IWDG 0
+#  endif
+#else
+#  define APP_HAS_HAL_IWDG 0
+#endif
+
 #include <string.h>
 
 #define APP_EVENT_QUEUE_SIZE     128u
