@@ -60,8 +60,8 @@ all: main-build
 main-build: SimBus2_Slave_RevA.elf secondary-outputs
 
 # Tool invocations
-SimBus2_Slave_RevA.elf SimBus2_Slave_RevA.map: $(OBJS) $(USER_OBJS) C:\Users\USER\Desktop\SimBus2_Slave_RevA\STM32G0B1CBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "SimBus2_Slave_RevA.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"C:\Users\USER\Desktop\SimBus2_Slave_RevA\STM32G0B1CBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SimBus2_Slave_RevA.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+SimBus2_Slave_RevA.elf SimBus2_Slave_RevA.map: $(OBJS) $(USER_OBJS) ../STM32G0B1CBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "SimBus2_Slave_RevA.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"../STM32G0B1CBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SimBus2_Slave_RevA.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
