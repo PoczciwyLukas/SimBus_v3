@@ -103,3 +103,28 @@
 #ifndef BOARD_NVM_FLASH_ADDR
 #define BOARD_NVM_FLASH_ADDR                (0x0801F800u)
 #endif
+
+
+#ifndef BOARD_NVM_MAGIC
+#define BOARD_NVM_MAGIC                     (0xA5u)
+#endif
+
+#ifndef BOARD_BACKLIGHT_DEFAULT_U8
+#define BOARD_BACKLIGHT_DEFAULT_U8          (64u)
+#endif
+
+#ifndef BOARD_AUTODETECT_DEFAULT_MS
+#define BOARD_AUTODETECT_DEFAULT_MS         (10000u)
+#endif
+
+#ifndef BOARD_CAN_STATUS_PERIOD_MS
+#define BOARD_CAN_STATUS_PERIOD_MS          (1000u)
+#endif
+
+#ifndef BOARD_CAN_ERROR_PERIOD_MS
+#define BOARD_CAN_ERROR_PERIOD_MS           (250u)
+#endif
+
+#ifndef BOARD_WATCHDOG_TIMEOUT_MS
+#define BOARD_WATCHDOG_TIMEOUT_MS           (1000u)
+#endif
