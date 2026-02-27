@@ -11,6 +11,29 @@
 #include "adc_app.h"
 
 #include "board_conf.h"
+#include "stm32g0xx_hal_iwdg.h"
+
+#if defined(__has_include)
+#  if __has_include("stm32g0xx_hal_iwdg.h")
+#    include "stm32g0xx_hal_iwdg.h"
+#    define APP_HAS_HAL_IWDG 1
+#  else
+#    define APP_HAS_HAL_IWDG 0
+#  endif
+#else
+#  define APP_HAS_HAL_IWDG 0
+#endif
+
+#if defined(__has_include)
+#  if __has_include("stm32g0xx_hal_iwdg.h")
+#    include "stm32g0xx_hal_iwdg.h"
+#    define APP_HAS_HAL_IWDG 1
+#  else
+#    define APP_HAS_HAL_IWDG 0
+#  endif
+#else
+#  define APP_HAS_HAL_IWDG 0
+#endif
 
 #if defined(HAL_IWDG_MODULE_ENABLED)
 #include "stm32g0xx_hal_iwdg.h"
@@ -34,10 +57,8 @@ static struct
     volatile uint32_t dropped_events;
 } s_app;
 
-static uint8_t s_wdg_inited = 0u;
-#if APP_HAS_HAL_IWDG
 static IWDG_HandleTypeDef s_hiwdg;
-#endif
+static uint8_t s_wdg_inited = 0u;
 
 static inline uint32_t app_now_ms(void) { return HAL_GetTick(); }
 
@@ -105,7 +126,6 @@ static bool app_q_pop(app_event_t *out)
 
 static void app_watchdog_init(void)
 {
-#if APP_HAS_HAL_IWDG
     s_hiwdg.Instance = IWDG;
     s_hiwdg.Init.Prescaler = IWDG_PRESCALER_64;
     s_hiwdg.Init.Window = 4095u;
@@ -116,18 +136,13 @@ static void app_watchdog_init(void)
     if (HAL_IWDG_Init(&s_hiwdg) == HAL_OK) {
         s_wdg_inited = 1u;
     }
-#else
-    s_wdg_inited = 0u;
-#endif
 }
 
 static inline void app_watchdog_kick(void)
 {
-#if APP_HAS_HAL_IWDG
     if (s_wdg_inited != 0u) {
         (void)HAL_IWDG_Refresh(&s_hiwdg);
     }
-#endif
 }
 
 typedef struct
