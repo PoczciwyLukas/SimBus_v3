@@ -35,6 +35,13 @@
 #  define APP_HAS_HAL_IWDG 0
 #endif
 
+#if defined(HAL_IWDG_MODULE_ENABLED)
+#include "stm32g0xx_hal_iwdg.h"
+#define APP_HAS_HAL_IWDG 1
+#else
+#define APP_HAS_HAL_IWDG 0
+#endif
+
 #include <string.h>
 
 #define APP_EVENT_QUEUE_SIZE     128u
