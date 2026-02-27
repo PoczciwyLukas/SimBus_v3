@@ -276,7 +276,15 @@ in voltage and temperature.*/
 #endif /* HAL_IRDA_MODULE_ENABLED */
 
 #ifdef HAL_IWDG_MODULE_ENABLED
-#include "stm32g0xx_hal_iwdg.h"
+#if defined(__has_include)
+#  if __has_include("stm32g0xx_hal_iwdg.h")
+#    include "stm32g0xx_hal_iwdg.h"
+#  else
+#    undef HAL_IWDG_MODULE_ENABLED
+#  endif
+#else
+#  include "stm32g0xx_hal_iwdg.h"
+#endif
 #endif /* HAL_IWDG_MODULE_ENABLED */
 
 #ifdef HAL_LPTIM_MODULE_ENABLED
